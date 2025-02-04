@@ -4,15 +4,57 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product"
+    "displayName": "Product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "uid": {
-      "type": "uid"
+    "name": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "code": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "in_stock": {
+      "type": "boolean"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "added_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "string"
+    },
+    "review": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::review.review",
+      "inversedBy": "products"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
     }
   }
 }

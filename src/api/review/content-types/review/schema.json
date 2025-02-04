@@ -1,27 +1,33 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "reviews",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Category"
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "Review"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
-    "description": {
+    "content": {
       "type": "richtext"
+    },
+    "rating": {
+      "default": 1,
+      "unique": false,
+      "required": true,
+      "type": "integer"
     },
     "products": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product",
-      "mappedBy": "category"
+      "mappedBy": "review"
     }
   }
 }
