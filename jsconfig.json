@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "moduleResolution": "nodenext",
-    "target": "ES2021",
+    "resolveJsonModule": true,
+    "module": "nodenext",
+    "target": "ES2022",
     "checkJs": true,
     "allowJs": true
   }
